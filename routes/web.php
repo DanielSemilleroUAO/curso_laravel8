@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Validacion;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Principal;
 use App\Http\Controllers\ProductosController;
@@ -29,7 +30,11 @@ Route::controller(ProductosController::class)->group(function () {
     Route::get('/products/{productId}', 'show');
 });
 
-Route::get('nosotros/autores', [Principal::class, 'create']);
+Route::get('nosotros', [Principal::class, 'index'])->name('index.nosotros');
+Route::get('nosotros/autores', [Principal::class, 'create'])->name('nosotros.autores');
+Route::get('nosotros/autores/informacion', [Principal::class, 'show'])->name('nosotros.informacion');
+Route::get('login', [Principal::class, 'show'])->name('nosotros.informacion');
+Route::post('login', [Validacion::class, 'store'])->name('login.store');
 
 // Colocar en orden las peticiones que tienen parametros
 // Route::get('/products', [ProductosController::class, 'index']);

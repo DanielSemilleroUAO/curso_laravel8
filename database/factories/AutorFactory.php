@@ -20,8 +20,8 @@ class AutorFactory extends Factory
     public function definition()
     {
         return [
-            'nombre'=> $this -> faker->sentence(),
-            'email'=> $this -> faker->unique()->safeEmail(),
+            'nombre' => $this->faker->name,
+            'email' => $this->faker->unique()->safeEmail(),
         ];
     }
 }

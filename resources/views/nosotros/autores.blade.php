@@ -12,4 +12,6 @@
 
     {{ $autors->links() }}
 
+    <a href="{{ route('nosotros.informacion') }}">Informacion de los autores</a>
+
 @endsection
